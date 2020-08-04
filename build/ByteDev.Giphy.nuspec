@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>ByteDev.Giphy</id>
+    <version>0.0.1</version>
+    <title>ByteDev.Giphy</title>
+    <authors>Paul Stanley</authors>
+    <owners>Paul Stanley</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>.NET Standard library SDK to help communicate with the Giphy API.</description>
+    <copyright>Copyright 2019</copyright>
+    <tags>giphy sdk api giphyapi gif mp4 webp search client image</tags>
+    <projectUrl>https://github.com/ByteDev/ByteDev.Giphy</projectUrl>
+    <icon>images\icon.png</icon>
+    <license type="file">LICENSE</license>
+    <dependencies>
+      <group targetFramework=".NETStandard2.0">
+        <dependency id="ByteDev.Collections" version="2.2.0" />
+        <dependency id="ByteDev.ResourceIdentifier" version="1.0.0" />
+        <dependency id="Newtonsoft.Json" version="12.0.3" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+	  <file src="..\src\ByteDev.Giphy\bin\Release\netstandard2.0\ByteDev.Giphy.dll" target="lib\netstandard2.0" />
+    <file src="..\src\ByteDev.Giphy\bin\Release\netstandard2.0\ByteDev.Giphy.xml" target="lib\netstandard2.0" />
+    <file src="..\images\icon.png" target="images\" />
+    <file src="..\LICENSE*" target="" />
+  </files>
+</package>
