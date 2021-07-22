@@ -56,6 +56,14 @@ namespace ByteDev.Giphy
         protected GiphyApiClientException(SerializationInfo info, StreamingContext context)
             : base(info, context)
         {
+            HttpStatusCode = (int)info.GetValue(nameof(HttpStatusCode), typeof(int));
+        }
+
+        public override void GetObjectData(SerializationInfo info, StreamingContext context)
+        {
+            base.GetObjectData(info, context);
+
+            info.AddValue(nameof(HttpStatusCode), HttpStatusCode, typeof(int));
         }
     }
 }

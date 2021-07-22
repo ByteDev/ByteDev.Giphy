@@ -12,7 +12,7 @@ namespace ByteDev.Giphy.UnitTests
             [Test]
             public void WhenHttpClientIsNull_ThenThrowException()
             {
-                Assert.Throws<ArgumentNullException>(() => new GiphyApiClient(null));
+                Assert.Throws<ArgumentNullException>(() => _ = new GiphyApiClient(null));
             }
         }
     }

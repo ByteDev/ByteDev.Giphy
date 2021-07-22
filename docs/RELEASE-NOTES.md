@@ -1,5 +1,17 @@
 # Release Notes
 
+## 4.0.3 - 22 July 2021
+
+Breaking changes:
+- (None)
+
+New features:
+- (None)
+
+Bug fixes / internal changes:
+- Fixed serialization problem with `GiphyApiClientException.HttpStatusCode` property.
+- Updated package dependencies.
+
 ## 4.0.2 - 04 August 2020
 
 Breaking changes:

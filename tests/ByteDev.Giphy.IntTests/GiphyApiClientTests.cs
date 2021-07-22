@@ -174,11 +174,21 @@ namespace ByteDev.Giphy.IntTests
             [Test]
             public async Task WhenQueryIsSuccessful_ThenReturnResults()
             {
-                var request = new TrendingRequest(ApiKeys.Valid) { Limit = 1 };
+                var request = new TrendingRequest(ApiKeys.Valid);
 
                 var response = await _sut.GetTrendingAsync(request);
 
-                Assert.That(response.Gifs.Count(), Is.EqualTo(1));
+                Assert.That(response.Gifs.Count(), Is.GreaterThan(0));
+            }
+
+            [Test]
+            public async Task WhenQueryLimitIsSet_ThenReturnResults()
+            {
+                var request = new TrendingRequest(ApiKeys.Valid) { Limit = 10 };
+
+                var response = await _sut.GetTrendingAsync(request);
+
+                Assert.That(response.Gifs.Count(), Is.EqualTo(request.Limit));
             }
 
             [Test]

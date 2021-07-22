@@ -38,7 +38,7 @@ namespace ByteDev.Giphy
         /// <param name="request">Request object.</param>
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public async Task<SearchResponse> SearchAsync(SearchRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<SearchResponse> SearchAsync(SearchRequest request, CancellationToken cancellationToken = default)
         {
             var uri = _uriFactory.Create(request);
 
@@ -52,7 +52,7 @@ namespace ByteDev.Giphy
         /// <param name="request">Request object.</param>
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public async Task<RandomResponse> GetRandomAsync(RandomRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<RandomResponse> GetRandomAsync(RandomRequest request, CancellationToken cancellationToken = default)
         {
             var uri = _uriFactory.Create(request);
 
@@ -65,7 +65,7 @@ namespace ByteDev.Giphy
         /// <param name="request">Request object.</param>
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public async Task<ByIdResponse> GetByIdAsync(ByIdRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<ByIdResponse> GetByIdAsync(ByIdRequest request, CancellationToken cancellationToken = default)
         {
             var uri = _uriFactory.Create(request);
 
@@ -78,7 +78,7 @@ namespace ByteDev.Giphy
         /// <param name="request">Request object.</param>
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public async Task<ByIdsResponse> GetByIdsAsync(ByIdsRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<ByIdsResponse> GetByIdsAsync(ByIdsRequest request, CancellationToken cancellationToken = default)
         {
             var uri = _uriFactory.Create(request);
 
@@ -92,7 +92,7 @@ namespace ByteDev.Giphy
         /// <param name="request">Request object.</param>
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public async Task<TrendingResponse> GetTrendingAsync(TrendingRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<TrendingResponse> GetTrendingAsync(TrendingRequest request, CancellationToken cancellationToken = default)
         {
             var uri = _uriFactory.Create(request);
 
@@ -106,7 +106,7 @@ namespace ByteDev.Giphy
         /// <param name="request">Request object.</param>
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public async Task<TranslateResponse> TranslateAsync(TranslateRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<TranslateResponse> TranslateAsync(TranslateRequest request, CancellationToken cancellationToken = default)
         {
             var uri = _uriFactory.Create(request);
 

@@ -1,21 +1,14 @@
-﻿using System;
+﻿using System.IO;
 
 namespace ByteDev.Giphy.IntTests
 {
     internal static class ApiKeys
     {
-        public static string Valid
-        {
-            get
-            {
-                var key = Environment.GetEnvironmentVariable("GiphyApiKey", EnvironmentVariableTarget.User);
+        private const string GiphyApiKeyFilePath = @"Z:\Dev\ByteDev.Giphy.apikey";
 
-                if(string.IsNullOrEmpty(key))
-                    throw new InvalidOperationException("Giphy API key was not found. Add Giphy API key to environment variables.");
+        private static string _apiKey;
 
-                return key;
-            }
-        }
+        public static string Valid => _apiKey ?? (_apiKey = File.ReadAllText(GiphyApiKeyFilePath).Trim());
 
         public static string Invalid = "notValidKey111";
     }
