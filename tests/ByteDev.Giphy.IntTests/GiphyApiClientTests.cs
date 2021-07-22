@@ -2,7 +2,8 @@
 using System.Net.Http;
 using System.Threading.Tasks;
 using ByteDev.Collections;
-using ByteDev.Giphy.Request;
+using ByteDev.Giphy.Contract.Request;
+using ByteDev.Giphy.IntTests.TestModels;
 using NUnit.Framework;
 
 namespace ByteDev.Giphy.IntTests

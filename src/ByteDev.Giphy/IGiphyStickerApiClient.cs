@@ -1,7 +1,7 @@
 ﻿using System.Threading;
 using System.Threading.Tasks;
-using ByteDev.Giphy.Request.Stickers;
-using ByteDev.Giphy.Response.Stickers;
+using ByteDev.Giphy.Contract.Request.Stickers;
+using ByteDev.Giphy.Contract.Response.Stickers;
 
 namespace ByteDev.Giphy
 {
@@ -17,6 +17,8 @@ namespace ByteDev.Giphy
         /// <param name="request">Request object.</param>
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <exception cref="T:System.ArgumentNullException"><paramref name="request" /> is null.</exception>
+        /// <exception cref="T:ByteDev.Giphy.GiphyApiClientException">Error occured with request.</exception>
         Task<StickerSearchResponse> SearchStickersAsync(StickerSearchRequest request, CancellationToken cancellationToken = default);
 
         /// <summary>
@@ -26,6 +28,8 @@ namespace ByteDev.Giphy
         /// <param name="request">Request object.</param>
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <exception cref="T:System.ArgumentNullException"><paramref name="request" /> is null.</exception>
+        /// <exception cref="T:ByteDev.Giphy.GiphyApiClientException">Error occured with request.</exception>
         Task<StickerTrendingResponse> GetTrendingStickersAsync(StickerTrendingRequest request, CancellationToken cancellationToken = default);
 
         /// <summary>
@@ -35,6 +39,8 @@ namespace ByteDev.Giphy
         /// <param name="request">Request object.</param>
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <exception cref="T:System.ArgumentNullException"><paramref name="request" /> is null.</exception>
+        /// <exception cref="T:ByteDev.Giphy.GiphyApiClientException">Error occured with request.</exception>
         Task<StickerTranslateResponse> TranslateStickersAsync(StickerTranslateRequest request, CancellationToken cancellationToken = default);
 
         /// <summary>
@@ -44,6 +50,8 @@ namespace ByteDev.Giphy
         /// <param name="request">Request object.</param>
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <exception cref="T:System.ArgumentNullException"><paramref name="request" /> is null.</exception>
+        /// <exception cref="T:ByteDev.Giphy.GiphyApiClientException">Error occured with request.</exception>
         Task<StickerRandomResponse> GetRandomStickerAsync(StickerRandomRequest request, CancellationToken cancellationToken = default);
 
         /// <summary>
@@ -53,6 +61,8 @@ namespace ByteDev.Giphy
         /// <param name="request">Request object.</param>
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <exception cref="T:System.ArgumentNullException"><paramref name="request" /> is null.</exception>
+        /// <exception cref="T:ByteDev.Giphy.GiphyApiClientException">Error occured with request.</exception>
         Task<StickerPackListResponse> GetStickerPackListAsync(StickerPackListingRequest request, CancellationToken cancellationToken = default);
 
         /// <summary>
@@ -61,6 +71,8 @@ namespace ByteDev.Giphy
         /// <param name="request">Request object.</param>
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <exception cref="T:System.ArgumentNullException"><paramref name="request" /> is null.</exception>
+        /// <exception cref="T:ByteDev.Giphy.GiphyApiClientException">Error occured with request.</exception>
         Task<StickerPackByIdResponse> GetStickerPackByIdAsync(StickerPackByIdRequest request, CancellationToken cancellationToken = default);
 
         /// <summary>
@@ -69,6 +81,8 @@ namespace ByteDev.Giphy
         /// <param name="request">Request object.</param>
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <exception cref="T:System.ArgumentNullException"><paramref name="request" /> is null.</exception>
+        /// <exception cref="T:ByteDev.Giphy.GiphyApiClientException">Error occured with request.</exception>
         Task<StickerPackStickersResponse> GetStickerPackStickersAsync(StickerPackStickersRequest request, CancellationToken cancellationToken = default);
 
         /// <summary>
@@ -77,6 +91,8 @@ namespace ByteDev.Giphy
         /// <param name="request">Request object.</param>
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <exception cref="T:System.ArgumentNullException"><paramref name="request" /> is null.</exception>
+        /// <exception cref="T:ByteDev.Giphy.GiphyApiClientException">Error occured with request.</exception>
         Task<StickerPackChildrenPacksResponse> GetStickPackChildrenPacksAsync(StickerPackChildrenPacksRequest request, CancellationToken cancellationToken = default);
     }
 }

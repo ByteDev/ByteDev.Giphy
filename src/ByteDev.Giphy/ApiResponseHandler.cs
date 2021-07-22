@@ -1,7 +1,7 @@
 ﻿using System.Net.Http;
 using System.Threading.Tasks;
+using ByteDev.Giphy.Contract.Response;
 using ByteDev.Giphy.Json;
-using ByteDev.Giphy.Response;
 using Newtonsoft.Json;
 
 namespace ByteDev.Giphy

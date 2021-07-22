@@ -1,15 +1,19 @@
 # Release Notes
 
-## 4.0.3 - 22 July 2021
+## 5.0.0 - 22 July 2021
 
 Breaking changes:
-- (None)
+- All `GiphyApiClient` public methods now throw `ArgumentNullException` on null requests.
+- All `GiphyStickerApiClient` public methods now throw `ArgumentNullException` on null requests.
+- Types in namespace `ByteDev.Giphy.Request` now exist in namespace `ByteDev.Giphy.Contract.Request`.
+- Types in namespace `ByteDev.Giphy.Response` now exist in namespace `ByteDev.Giphy.Contract.Response`.
+- Types in namespace `ByteDev.Giphy.Domain` now exist in namespace `ByteDev.Giphy.Contract`.
 
 New features:
 - (None)
 
 Bug fixes / internal changes:
-- Fixed serialization problem with `GiphyApiClientException.HttpStatusCode` property.
+- Fixed serialization bug where `GiphyApiClientException.HttpStatusCode` property not being set.
 - Updated package dependencies.
 
 ## 4.0.2 - 04 August 2020

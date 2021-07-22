@@ -1,5 +1,5 @@
 ﻿using System;
-using ByteDev.Giphy.Request.Stickers;
+using ByteDev.Giphy.Contract.Request.Stickers;
 using ByteDev.ResourceIdentifier;
 
 namespace ByteDev.Giphy.UriFactories

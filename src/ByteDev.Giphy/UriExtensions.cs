@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using ByteDev.Collections;
-using ByteDev.Giphy.Domain;
+using ByteDev.Giphy.Contract;
 using ByteDev.ResourceIdentifier;
 
 namespace ByteDev.Giphy

@@ -1,6 +1,6 @@
 ﻿using System;
-using ByteDev.Giphy.Domain;
-using ByteDev.Giphy.Request;
+using ByteDev.Giphy.Contract;
+using ByteDev.Giphy.Contract.Request;
 using ByteDev.Giphy.UriFactories;
 using NUnit.Framework;
 

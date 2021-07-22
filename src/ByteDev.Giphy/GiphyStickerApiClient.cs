@@ -1,8 +1,9 @@
-﻿using System.Net.Http;
+﻿using System;
+using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
-using ByteDev.Giphy.Request.Stickers;
-using ByteDev.Giphy.Response.Stickers;
+using ByteDev.Giphy.Contract.Request.Stickers;
+using ByteDev.Giphy.Contract.Response.Stickers;
 using ByteDev.Giphy.UriFactories;
 
 namespace ByteDev.Giphy
@@ -18,6 +19,7 @@ namespace ByteDev.Giphy
         /// Initializes a new instance of the <see cref="T:ByteDev.Giphy.GiphyStickerApiClient" /> class.
         /// </summary>
         /// <param name="httpClient">HttpClient to use in all API calls.</param>
+        /// <exception cref="T:System.ArgumentNullException"><paramref name="httpClient" /> is null.</exception>
         public GiphyStickerApiClient(HttpClient httpClient) : this(httpClient, new GiphyApiClientSettings())
         {
         }
@@ -27,6 +29,8 @@ namespace ByteDev.Giphy
         /// </summary>
         /// <param name="httpClient">HttpClient to use in all API calls.</param>
         /// <param name="settings">Client settings.</param>
+        /// <exception cref="T:System.ArgumentNullException"><paramref name="httpClient" /> is null.</exception>
+        /// <exception cref="T:System.ArgumentNullException"><paramref name="settings" /> is null.</exception>
         public GiphyStickerApiClient(HttpClient httpClient, GiphyApiClientSettings settings) : base(httpClient)
         {
             _uriFactory = new GiphyStickerApiUriFactory(settings);
@@ -39,8 +43,13 @@ namespace ByteDev.Giphy
         /// <param name="request">Request object.</param>
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <exception cref="T:System.ArgumentNullException"><paramref name="request" /> is null.</exception>
+        /// <exception cref="T:ByteDev.Giphy.GiphyApiClientException">Error occured with request.</exception>
         public async Task<StickerSearchResponse> SearchStickersAsync(StickerSearchRequest request, CancellationToken cancellationToken = default)
         {
+            if (request == null)
+                throw new ArgumentNullException(nameof(request));
+
             var uri = _uriFactory.Create(request);
 
             return await GetAsync<StickerSearchResponse>(uri, cancellationToken);
@@ -53,8 +62,13 @@ namespace ByteDev.Giphy
         /// <param name="request">Request object.</param>
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <exception cref="T:System.ArgumentNullException"><paramref name="request" /> is null.</exception>
+        /// <exception cref="T:ByteDev.Giphy.GiphyApiClientException">Error occured with request.</exception>
         public async Task<StickerTrendingResponse> GetTrendingStickersAsync(StickerTrendingRequest request, CancellationToken cancellationToken = default)
         {
+            if (request == null)
+                throw new ArgumentNullException(nameof(request));
+
             var uri = _uriFactory.Create(request);
 
             return await GetAsync<StickerTrendingResponse>(uri, cancellationToken);
@@ -67,8 +81,13 @@ namespace ByteDev.Giphy
         /// <param name="request">Request object.</param>
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <exception cref="T:System.ArgumentNullException"><paramref name="request" /> is null.</exception>
+        /// <exception cref="T:ByteDev.Giphy.GiphyApiClientException">Error occured with request.</exception>
         public async Task<StickerTranslateResponse> TranslateStickersAsync(StickerTranslateRequest request, CancellationToken cancellationToken = default)
         {
+            if (request == null)
+                throw new ArgumentNullException(nameof(request));
+
             var uri = _uriFactory.Create(request);
 
             return await GetAsync<StickerTranslateResponse>(uri, cancellationToken);
@@ -81,8 +100,13 @@ namespace ByteDev.Giphy
         /// <param name="request">Request object.</param>
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <exception cref="T:System.ArgumentNullException"><paramref name="request" /> is null.</exception>
+        /// <exception cref="T:ByteDev.Giphy.GiphyApiClientException">Error occured with request.</exception>
         public async Task<StickerRandomResponse> GetRandomStickerAsync(StickerRandomRequest request, CancellationToken cancellationToken = default)
         {
+            if (request == null)
+                throw new ArgumentNullException(nameof(request));
+
             var uri = _uriFactory.Create(request);
 
             return await GetAsync<StickerRandomResponse>(uri, cancellationToken);
@@ -95,8 +119,13 @@ namespace ByteDev.Giphy
         /// <param name="request">Request object.</param>
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <exception cref="T:System.ArgumentNullException"><paramref name="request" /> is null.</exception>
+        /// <exception cref="T:ByteDev.Giphy.GiphyApiClientException">Error occured with request.</exception>
         public async Task<StickerPackListResponse> GetStickerPackListAsync(StickerPackListingRequest request, CancellationToken cancellationToken = default)
         {
+            if (request == null)
+                throw new ArgumentNullException(nameof(request));
+
             var uri = _uriFactory.Create(request);
 
             return await GetAsync<StickerPackListResponse>(uri, cancellationToken);
@@ -108,8 +137,13 @@ namespace ByteDev.Giphy
         /// <param name="request">Request object.</param>
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <exception cref="T:System.ArgumentNullException"><paramref name="request" /> is null.</exception>
+        /// <exception cref="T:ByteDev.Giphy.GiphyApiClientException">Error occured with request.</exception>
         public async Task<StickerPackByIdResponse> GetStickerPackByIdAsync(StickerPackByIdRequest request, CancellationToken cancellationToken = default)
         {
+            if (request == null)
+                throw new ArgumentNullException(nameof(request));
+
             var uri = _uriFactory.Create(request);
 
             return await GetAsync<StickerPackByIdResponse>(uri, cancellationToken);
@@ -121,8 +155,13 @@ namespace ByteDev.Giphy
         /// <param name="request">Request object.</param>
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <exception cref="T:System.ArgumentNullException"><paramref name="request" /> is null.</exception>
+        /// <exception cref="T:ByteDev.Giphy.GiphyApiClientException">Error occured with request.</exception>
         public async Task<StickerPackStickersResponse> GetStickerPackStickersAsync(StickerPackStickersRequest request, CancellationToken cancellationToken = default)
         {
+            if (request == null)
+                throw new ArgumentNullException(nameof(request));
+
             var uri = _uriFactory.Create(request);
 
             return await GetAsync<StickerPackStickersResponse>(uri, cancellationToken);
@@ -134,8 +173,13 @@ namespace ByteDev.Giphy
         /// <param name="request">Request object.</param>
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <exception cref="T:System.ArgumentNullException"><paramref name="request" /> is null.</exception>
+        /// <exception cref="T:ByteDev.Giphy.GiphyApiClientException">Error occured with request.</exception>
         public async Task<StickerPackChildrenPacksResponse> GetStickPackChildrenPacksAsync(StickerPackChildrenPacksRequest request, CancellationToken cancellationToken = default)
         {
+            if (request == null)
+                throw new ArgumentNullException(nameof(request));
+
             var uri = _uriFactory.Create(request);
 
             return await GetAsync<StickerPackChildrenPacksResponse>(uri, cancellationToken);

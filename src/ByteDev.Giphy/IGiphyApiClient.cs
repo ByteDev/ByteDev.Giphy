@@ -1,7 +1,7 @@
 ﻿using System.Threading;
 using System.Threading.Tasks;
-using ByteDev.Giphy.Request;
-using ByteDev.Giphy.Response;
+using ByteDev.Giphy.Contract.Request;
+using ByteDev.Giphy.Contract.Response;
 
 namespace ByteDev.Giphy
 {
@@ -16,6 +16,8 @@ namespace ByteDev.Giphy
         /// <param name="request">Request object.</param>
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <exception cref="T:System.ArgumentNullException"><paramref name="request" /> is null.</exception>
+        /// <exception cref="T:ByteDev.Giphy.GiphyApiClientException">Error occured with request.</exception>
         Task<SearchResponse> SearchAsync(SearchRequest request, CancellationToken cancellationToken = default);
 
         /// <summary>
@@ -25,6 +27,8 @@ namespace ByteDev.Giphy
         /// <param name="request">Request object.</param>
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <exception cref="T:System.ArgumentNullException"><paramref name="request" /> is null.</exception>
+        /// <exception cref="T:ByteDev.Giphy.GiphyApiClientException">Error occured with request.</exception>
         Task<RandomResponse> GetRandomAsync(RandomRequest request, CancellationToken cancellationToken = default);
 
         /// <summary>
@@ -33,6 +37,8 @@ namespace ByteDev.Giphy
         /// <param name="request">Request object.</param>
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <exception cref="T:System.ArgumentNullException"><paramref name="request" /> is null.</exception>
+        /// <exception cref="T:ByteDev.Giphy.GiphyApiClientException">Error occured with request.</exception>
         Task<ByIdResponse> GetByIdAsync(ByIdRequest request, CancellationToken cancellationToken = default);
 
         /// <summary>
@@ -41,6 +47,8 @@ namespace ByteDev.Giphy
         /// <param name="request">Request object.</param>
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <exception cref="T:System.ArgumentNullException"><paramref name="request" /> is null.</exception>
+        /// <exception cref="T:ByteDev.Giphy.GiphyApiClientException">Error occured with request.</exception>
         Task<ByIdsResponse> GetByIdsAsync(ByIdsRequest request, CancellationToken cancellationToken = default);
 
         /// <summary>
@@ -50,6 +58,8 @@ namespace ByteDev.Giphy
         /// <param name="request">Request object.</param>
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <exception cref="T:System.ArgumentNullException"><paramref name="request" /> is null.</exception>
+        /// <exception cref="T:ByteDev.Giphy.GiphyApiClientException">Error occured with request.</exception>
         Task<TrendingResponse> GetTrendingAsync(TrendingRequest request, CancellationToken cancellationToken = default);
 
         /// <summary>
@@ -59,6 +69,8 @@ namespace ByteDev.Giphy
         /// <param name="request">Request object.</param>
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <exception cref="T:System.ArgumentNullException"><paramref name="request" /> is null.</exception>
+        /// <exception cref="T:ByteDev.Giphy.GiphyApiClientException">Error occured with request.</exception>
         Task<TranslateResponse> TranslateAsync(TranslateRequest request, CancellationToken cancellationToken = default);
     }
 }
