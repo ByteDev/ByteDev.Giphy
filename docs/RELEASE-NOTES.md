@@ -1,5 +1,17 @@
 # Release Notes
 
+## 5.0.1 - 24 July 2021
+
+Breaking changes:
+- (None)
+
+New features:
+- (None)
+
+Bug fixes / internal changes:
+- Fix where .NET Framework package consumers caused API URI to not be constructed properly.
+- Updated package dependencies.
+
 ## 5.0.0 - 22 July 2021
 
 Breaking changes:
