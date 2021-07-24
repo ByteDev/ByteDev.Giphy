@@ -36,6 +36,9 @@
     <Reference Include="ByteDev.Collections, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\ByteDev.Collections.3.1.0\lib\netstandard2.0\ByteDev.Collections.dll</HintPath>
     </Reference>
+    <Reference Include="ByteDev.Giphy, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\ByteDev.Giphy.5.0.1\lib\netstandard2.0\ByteDev.Giphy.dll</HintPath>
+    </Reference>
     <Reference Include="ByteDev.ResourceIdentifier, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\ByteDev.ResourceIdentifier.2.1.1\lib\netstandard2.0\ByteDev.ResourceIdentifier.dll</HintPath>
     </Reference>
@@ -58,12 +61,6 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\src\ByteDev.Giphy\ByteDev.Giphy.csproj">
-      <Project>{872408D8-AEE4-4E58-9937-F4657C5AD7A3}</Project>
-      <Name>ByteDev.Giphy</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
