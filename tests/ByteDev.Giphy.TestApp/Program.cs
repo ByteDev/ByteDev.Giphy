@@ -2,7 +2,7 @@
 using System.IO;
 using System.Net.Http;
 using System.Threading.Tasks;
-using ByteDev.Giphy.Request;
+using ByteDev.Giphy.Contract.Request;
 
 namespace ByteDev.Giphy.TestApp
 {

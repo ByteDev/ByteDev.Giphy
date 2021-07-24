@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="ByteDev.Giphy" Version="4.0.2" />
+    <PackageReference Include="ByteDev.Giphy" Version="5.0.0" />
   </ItemGroup>
 
 </Project>
