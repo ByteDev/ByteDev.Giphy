@@ -4,6 +4,6 @@
     {
         public const int NotFound = 404;
 
-        public const int Forbidden = 403;
+        public const int Forbidden = 401;
     }
 }

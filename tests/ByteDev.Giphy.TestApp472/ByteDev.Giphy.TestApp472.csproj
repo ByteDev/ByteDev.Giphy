@@ -34,16 +34,19 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="ByteDev.Collections, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\ByteDev.Collections.3.1.0\lib\netstandard2.0\ByteDev.Collections.dll</HintPath>
+      <HintPath>..\..\packages\ByteDev.Collections.4.0.0\lib\netstandard2.0\ByteDev.Collections.dll</HintPath>
     </Reference>
     <Reference Include="ByteDev.Giphy, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\ByteDev.Giphy.5.0.1\lib\netstandard2.0\ByteDev.Giphy.dll</HintPath>
     </Reference>
     <Reference Include="ByteDev.ResourceIdentifier, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\ByteDev.ResourceIdentifier.2.1.1\lib\netstandard2.0\ByteDev.ResourceIdentifier.dll</HintPath>
+      <HintPath>..\..\packages\ByteDev.ResourceIdentifier.2.2.0\lib\netstandard2.0\ByteDev.ResourceIdentifier.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="ByteDev.Strings, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\ByteDev.Strings.11.0.0\lib\netstandard2.0\ByteDev.Strings.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

@@ -1,15 +1,15 @@
 #addin "nuget:?package=Cake.Incubator&version=6.0.0"
+#addin "nuget:?package=Cake.Powershell&version=1.0.1"
 #tool "nuget:?package=NUnit.ConsoleRunner&version=3.12.0"
-#tool "nuget:?package=GitVersion.CommandLine&version=5.6.8"
+#tool "nuget:?package=GitVersion.CommandLine&version=5.6.10"
 #load "ByteDev.Utilities.cake"
 
 var solutionName = "ByteDev.Giphy";
 var projName = "ByteDev.Giphy";
 
 var solutionFilePath = "../" + solutionName + ".sln";
+var projFilePath = "../src/" + projName + "/" + projName + ".csproj";
 var nuspecFilePath = projName + ".nuspec";
-
-var nugetSources = new[] {"https://api.nuget.org/v3/index.json"};
 
 var target = Argument("target", "Default");
 
@@ -20,9 +20,20 @@ var configuration = GetBuildConfiguration();
 
 Information("Configurtion: " + configuration);
 
+Task("CheckNuspec")
+	.Description("Check nuspec file is valid")
+	.Does(() =>
+	{
+		StartPowershellFile("./nuspec-check.ps1", args =>
+        {
+            args.Append(projFilePath)
+				.Append(nuspecFilePath);
+        });
+	});
 
 Task("Clean")
-    .Does(() =>
+    .IsDependentOn("CheckNuspec")
+	.Does(() =>
 	{
 		CleanDirectory(artifactsDirectory);
 	
@@ -36,7 +47,7 @@ Task("Restore")
     {
 		var settings = new NuGetRestoreSettings
 		{
-			Source = nugetSources
+			Source = new[] { "https://api.nuget.org/v3/index.json" }
 		};
 
 		NuGetRestore(solutionFilePath, settings);
@@ -46,7 +57,7 @@ Task("Build")
 	.IsDependentOn("Restore")
     .Does(() =>
 	{	
-		var settings = new DotNetCoreBuildSettings()
+		var settings = new DotNetCoreBuildSettings
         {
             Configuration = configuration
         };
@@ -58,7 +69,7 @@ Task("UnitTests")
     .IsDependentOn("Build")
     .Does(() =>
 	{
-		var settings = new DotNetCoreTestSettings()
+		var settings = new DotNetCoreTestSettings
 		{
 			Configuration = configuration,
 			NoBuild = true
